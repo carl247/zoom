@@ -28,7 +28,7 @@ session_write_close();
 print "<pre style='text-align: center;' align=center><form method=post>Name: <input type='text' name='name'><br>
 Email: <input type='email' name='email' required><br><br><input type='submit' name='sub' value='Generate Link'></form></pre>";
 if(isset($_POST['sub']) && $_POST['email'] != ''){
-$link = $_SERVER['HTTP_HOST']."/meeting1027?session=".base64_encode($_POST['email'].'||'.ucwords("$_POST[name]").'');
+$link = "https://".$_SERVER['HTTP_HOST']."/meeting1027?session=".base64_encode($_POST['email'].'||'.ucwords("$_POST[name]").'');
 print "<pre style='text-align: center;' align=center><br>Meeting Link: <a href='$link' target='_blank'>$link</a></pre>";	
 }
 ?>
